@@ -8,7 +8,9 @@ public class inventory : MonoBehaviour
 {
     public bool[] is_filled;
     public TextMeshProUGUI[] slotsNumbers;
+    public int[] amounts;
     public bool is_invent_full = false;
+    private int INVENTORY_SIZE;
     /*public bool is_open = false;
     private bool opening_inventory = false;*/
     //public GameObject INVENT_FULL_CAN;
@@ -26,14 +28,21 @@ public class inventory : MonoBehaviour
 
     public void AddElement(int idx, int amount)
     {
-        int count = Int32.Parse(slotsNumbers[idx].ToString());
-        slotsNumbers[idx].text = (count++).ToString();
+        amounts[idx] += amount;
+        slotsNumbers[idx].text = (amounts[idx]).ToString();
     }
 
     public bool IsElementFull(int idx)
     {
-        int count = Int32.Parse(slotsNumbers[idx].ToString());
-        return (count > 47);
+        return (amounts[idx] > 47);
+    }
+
+    private void Start()
+    {
+        INVENTORY_SIZE = 1;
+        amounts = new int[INVENTORY_SIZE];
+        for (int i = 0; i < INVENTORY_SIZE; i++)
+            amounts[i] = 0;
     }
 
     private void Update()

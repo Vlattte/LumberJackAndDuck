@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8B9AEF6A-66B2-DDDF-58F9-6519E82B0ADB}</ProjectGuid>
+    <ProjectGuid>{313B2D2A-105C-3604-24E7-4D82C1456B76}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.AdaptivePerformance.Profiler.Editor</AssemblyName>
@@ -748,27 +748,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.AdaptivePerformance.csproj">
-      <Project>{35B8550F-4E85-9D9E-F2FE-570A490A718B}</Project>
+      <Project>{2B5BC717-660B-13CC-FF3B-DE944D8F7CBA}</Project>
       <Name>Unity.AdaptivePerformance</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.UI.Editor.csproj">
-      <Project>{3571C957-BE4E-C6C9-CF30-9EF083806E7E}</Project>
+      <Project>{E6E915C1-48E5-9020-2051-1749CE27AE57}</Project>
       <Name>Unity.AdaptivePerformance.UI.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{067C016A-9BDF-7DCE-2E59-C851BCB7CD88}</Project>
+      <Project>{0B16F7DC-252F-81EF-2698-A1BCECB0F336}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{03AC2CA7-AF01-FE34-84B6-7CE92CF47147}</Project>
+      <Project>{3DF62337-3A95-20DF-FE76-BF46A6616497}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{A3047590-38BB-CCB1-C01D-C771027F8920}</Project>
+      <Project>{F7E5066F-68A8-11F1-E2E5-09729C26050F}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{01B1BFF9-F8EB-01DA-B770-0788E04F46BD}</Project>
+      <Project>{0935613B-C2AF-4417-746D-97EBEB4124F4}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

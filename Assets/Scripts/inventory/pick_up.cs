@@ -18,10 +18,10 @@ public class pick_up : MonoBehaviour
     {
         if(col.CompareTag("Player"))
         {
-            if (Inventory.)
+            if (!Inventory.IsElementFull(0))
             {
+                Inventory.AddElement(0, 2);
                 Destroy(gameObject);
-                break;
             }
         }
     }

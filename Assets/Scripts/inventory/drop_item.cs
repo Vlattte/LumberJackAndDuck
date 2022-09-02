@@ -10,13 +10,13 @@ public class drop_item : MonoBehaviour
     private GameObject Player;
     public int inventory_position;
 
-    private void Start()
+    /*private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Inventory = Player.GetComponent<inventory>();
         //inventory_position = Player.GetComponent<player_cntrl>().invent_idx;
-    }
-    private void OnMouseDown()
+    }*/
+    /*private void OnMouseDown()
     {
         if (Inventory.is_open)
         {
@@ -35,5 +35,5 @@ public class drop_item : MonoBehaviour
             Instantiate<GameObject>(dropItem, forward_pos, Quaternion.identity);
             Destroy(gameObject);
         }
-    }
+    }*/
 }

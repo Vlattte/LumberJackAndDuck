@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{35B8550F-4E85-9D9E-F2FE-570A490A718B}</ProjectGuid>
+    <ProjectGuid>{2B5BC717-660B-13CC-FF3B-DE944D8F7CBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.AdaptivePerformance</AssemblyName>
@@ -759,19 +759,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Subsystem.Registration.csproj">
-      <Project>{6156003E-6D74-DDF0-C156-970DEF3B4D38}</Project>
+      <Project>{034EA053-202D-764B-AC70-81ED1A2A77D6}</Project>
       <Name>Unity.Subsystem.Registration</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Profiling.Core.csproj">
-      <Project>{AA90F159-A975-2B0A-BC5D-07DB6FBE84A7}</Project>
+      <Project>{29B76418-0526-1FC6-F026-A1996DFE4B8C}</Project>
       <Name>Unity.Profiling.Core</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{067C016A-9BDF-7DCE-2E59-C851BCB7CD88}</Project>
+      <Project>{0B16F7DC-252F-81EF-2698-A1BCECB0F336}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{03AC2CA7-AF01-FE34-84B6-7CE92CF47147}</Project>
+      <Project>{3DF62337-3A95-20DF-FE76-BF46A6616497}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
