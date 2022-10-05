@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54fe6493c488084598a86a81c855580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory_object: {fileID: 4047135152178757635}
-  item_price: 1
+  item_amount: 2
+  obj_name: logs
+  inventoryPanel: {fileID: 0}
 --- !u!60 &555312741754281615
 PolygonCollider2D:
   m_ObjectHideFlags: 0
