@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CD428973-53AE-A5B3-672A-500E624D3BA4}</ProjectGuid>
+    <ProjectGuid>{0BCEF93B-4D16-B529-40A6-907FF5D4895D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>InventoryScripts</AssemblyName>
+    <AssemblyName>Unity.RenderPipelines.Core.ShaderLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -56,14 +56,61 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\inventory\pocket_inventory.cs" />
-    <Compile Include="Assets\Scripts\inventory\item.cs" />
-    <Compile Include="Assets\Scripts\inventory\base_inventory.cs" />
-    <Compile Include="Assets\Scripts\inventory\pick_up.cs" />
-    <Compile Include="Assets\Scripts\inventory\storage_script.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\DummyShaderLibrary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\inventory\InventoryScripts.asmdef" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\Validate.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Debug.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\SampleUVMappingInternal.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Random.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Refraction.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\UnityInstancing.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\SDF2D.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\EntityLighting.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Color.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Macros.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\Fibonacci.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\CommonLighting.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\SampleUVMapping.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\GLES3.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\CommonMaterial.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Filtering.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\Metal.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\Sampling.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\Vulkan.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\PhysicalCamera.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Common.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\ACES.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\GraniteShaderLibBase.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\SpaceFillingCurves.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Unity.RenderPipelines.Core.ShaderLibrary.asmdef" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\VolumeRendering.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Version.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\NormalSurfaceGradient.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\ParallaxMapping.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\SpaceTransforms.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\GLCore.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\BC6H.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\GLES2.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\MetaPass.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\CommonShadow.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\Switch.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\TextureStack.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Texture.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\UnityDOTSInstancing.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\SampleUVMappingNormalInternal.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\PerPixelDisplacement.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\AreaLighting.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Sampling\Hammersley.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\CommonDeprecated.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\API\D3D11.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Packing.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Tessellation.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\BSDF.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\ImageBasedLighting.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\GeometricTools.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\VirtualTexturing.hlsl" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core@12.1.6\ShaderLibrary\Shadow\ShadowSamplingTent.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -722,10 +769,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{9D111146-D984-5A4E-BB8F-9519E067104E}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{0B16F7DC-252F-81EF-2698-A1BCECB0F336}</Project>
       <Name>UnityEditor.UI</Name>
