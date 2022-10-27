@@ -1,26 +1,45 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class PathFinder : MonoBehaviour
 {
-    Grid grid;
+    public Grid grid;
     public Transform BeginingNode, EndNode;
+    Rigidbody2D rb;
+    float speed;
 
     private void Awake()
     {
-        grid = GetComponent<Grid>();
+        //grid = GetComponent<Grid>();
+        rb = GetComponent<Rigidbody2D>();  
+        speed = 2f;
     }
 
 
     void Update()
     {
-        FindPath(BeginingNode.position, EndNode.position);
+        if(Input.GetButton("Jump"))
+        {
+            FindPath(BeginingNode.position, EndNode.position);
+        }
+        
+    }
+
+    void MoveTo(Vector2 dist_vec, bool isDistStrg = false)
+    {
+        float dist = (rb.position - dist_vec).magnitude;
+        transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed * Time.deltaTime);
+
     }
 
 
     void FindPath(Vector3 startPoint, Vector3 targetPoint)
     {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
         //transform world position to nodes
         Node startNode = grid.GetNodeFromPosition(startPoint);
         Node targetNode = grid.GetNodeFromPosition(targetPoint);
@@ -35,8 +54,8 @@ public class PathFinder : MonoBehaviour
                        
             for (int i = 1; i < OPEN_SET.Count; i++)
             {
-                if (curNode.fCost > OPEN_SET[i].fCost ||
-                   curNode.fCost == OPEN_SET[i].fCost && curNode.h_cost > OPEN_SET[i].h_cost)
+                if (curNode.f_cost > OPEN_SET[i].f_cost ||
+                   curNode.f_cost == OPEN_SET[i].f_cost && curNode.h_cost > OPEN_SET[i].h_cost)
                     curNode = OPEN_SET[i];
             }
 
@@ -47,6 +66,8 @@ public class PathFinder : MonoBehaviour
             if (curNode == targetNode)
             {
                 ReversedPath(startNode, targetNode);
+                sw.Stop();
+                UnityEngine.Debug.Log("Path_finding " + sw.ElapsedMilliseconds);
                 return;
             }
 

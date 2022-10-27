@@ -11,9 +11,12 @@ public class Grid : MonoBehaviour
     private int gridCellsX, gridCellsY;
     private Node[,] grid;
 
+    public bool isGismosOnlyPath;
+
 
     private void Start()
     {
+        isGismosOnlyPath = true;
         nodeDiameter = nodeRadius * 2;
         gridCellsX = Mathf.RoundToInt(gridSize.x / nodeDiameter);
         gridCellsY = Mathf.RoundToInt(gridSize.y / nodeDiameter);
@@ -73,6 +76,7 @@ public class Grid : MonoBehaviour
     {
         //draw grid contour
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, gridSize.y, 1));
+
         //draw grid
         if (grid != null)
         {
