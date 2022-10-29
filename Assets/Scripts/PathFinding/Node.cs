@@ -32,8 +32,8 @@ public class Node : IHeapItem<Node>
 
     public int heapIndex
     {
-        get { return heapIndex; }
-        set { heapIndex = value; } 
+        get { return heap_index; }
+        set { heap_index = value; } 
     }
 
     public int CompareTo(Node compareNode)

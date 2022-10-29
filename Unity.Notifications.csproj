@@ -58,18 +58,18 @@
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\DrawableResourceData.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationStyles.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSetting.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\iOSAuthorizationOption.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettingsManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\iOSNotificationPostProcessor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationIconType.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettingsCollection.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettingsProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\AssembyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\iOSPresentationOption.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\TextureAssetUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\AndroidNotificationPostProcessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSetting.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettingsManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationIconType.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\NotificationSettingsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.mobile.notifications@2.0.1\Editor\Unity.Mobile.Notifications.Editor.asmdef" />

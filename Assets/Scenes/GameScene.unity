@@ -26440,7 +26440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982553931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b44eeeb27e8282d47a5bec825853e903, type: 3}
   m_Name: 
@@ -26449,27 +26449,7 @@ MonoBehaviour:
   player: {fileID: 1129948761}
   DIST_TO_PLAYER: 0
   DIST_TO_STORAGE: 0
-  speed: 0
---- !u!4 &982553935 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4064520334451326948, guid: 64d5e3405b050064ebd3aa27405e510a, type: 3}
-  m_PrefabInstance: {fileID: 5924738660572587530}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &982553936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 982553931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb6bba863933084caf9afef88b709ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 1483932136}
-  BeginingNode: {fileID: 982553935}
-  EndNode: {fileID: 1129948768}
+  speed: 1
 --- !u!70 &982553937
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -27299,6 +27279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1483932137}
   - component: {fileID: 1483932136}
+  - component: {fileID: 1483932139}
+  - component: {fileID: 1483932138}
   m_Layer: 0
   m_Name: A_Grid
   m_TagString: Untagged
@@ -27323,6 +27305,7 @@ MonoBehaviour:
     m_Bits: 128
   nodeRadius: 0.5
   gridSize: {x: 100, y: 100}
+  isDrawGizmos: 0
 --- !u!4 &1483932137
 Transform:
   m_ObjectHideFlags: 0
@@ -27338,6 +27321,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483932138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483932135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb6bba863933084caf9afef88b709ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1483932136}
+--- !u!114 &1483932139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483932135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c13f27b9fdd6f9438c86b862bcc9eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1510898864
 PrefabInstance:
   m_ObjectHideFlags: 0

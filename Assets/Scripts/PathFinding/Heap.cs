@@ -42,7 +42,7 @@ public class Heap<T> where T: IHeapItem<T>
         get { return cur_item_count; }
     }
 
-    bool Contains(T item)
+    public bool Contains(T item)
     {
         return Equals(items[item.heapIndex], item);
     }

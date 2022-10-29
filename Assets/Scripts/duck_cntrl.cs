@@ -16,9 +16,13 @@ public class duck_cntrl : MonoBehaviour
     public float speed;
 
     private bool isSendToStorage;   //true, if player told to go to the base
+    int way_point_idx;
+
+    Vector3[] path;
 
     void Start()
     {
+        way_point_idx = 0;
         rb = GetComponent<Rigidbody2D>();
         speed = 2f;
         DIST_TO_PLAYER = 1.47f;
@@ -26,17 +30,47 @@ public class duck_cntrl : MonoBehaviour
         storage_pos = storage.transform.position;
         player_pos = player.transform.position;
 
+        PathManager.Requestpath(transform.position, player_pos, OnPathFound);
+
         isSendToStorage = false;
     }
 
     void Update()
     {
         player_pos = player.transform.position;
-        if (!isSendToStorage)
+        /*if (!isSendToStorage)
             MoveTo(player_pos);
 
         if (isSendToStorage)
-            MoveTo(storage_pos, true);
+            MoveTo(storage_pos, true);*/
+    }
+
+    void OnPathFound(Vector3[] _path, bool isPathSuccess)
+    {
+        if(isPathSuccess)
+        {
+            path = _path;
+            StopCoroutine("FollowPath");
+            StartCoroutine("FollowPath");
+        }
+    }
+
+    IEnumerator FollowPath()
+    {
+        Vector3 currentWaypoint = path[0];
+
+        while(true)
+        {
+            way_point_idx++;
+            if(way_point_idx >= path.Length)
+            {
+                yield break;
+            }
+            currentWaypoint = path[way_point_idx];
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed);
+        yield return null;
     }
 
     bool checkIsDistIsNear(bool isDistStrg)
