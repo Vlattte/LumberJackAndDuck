@@ -40,7 +40,7 @@ public class duck_cntrl : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("duckCaller") && !isWalking && !isSendToStorage)
+        if (GameObject.FindGameObjectWithTag("duckCaller") && !isWalking)
         {
             isWalking = true;
             duckCaller = GameObject.FindGameObjectWithTag("duckCaller");
@@ -52,13 +52,16 @@ public class duck_cntrl : MonoBehaviour
         
 
         if (isSendToStorage)
-            MoveTo(storage_pos, true);
+        {
+            isSendToStorage = false;
+            PathManager.Requestpath(transform.position, storage_pos, OnPathFound);
+        }     
     }
-
 
     public void MoveToStorage()
     {
         isSendToStorage = true;
+        isWalking = false;
     }
 
     void OnPathFound(Vector3[] _path, bool isPathSuccess)
@@ -88,6 +91,9 @@ public class duck_cntrl : MonoBehaviour
                 {
                     isWalking = false;
                     Destroy(duckCaller);
+
+                    isSendToStorage = false;
+                    
                     yield break;
                 }
                 currentWaypoint = path[way_point_idx];

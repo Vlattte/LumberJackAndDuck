@@ -26,7 +26,8 @@ public class tree_script : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.GetComponent<player_cntrl>().isTreeAtFront = false;
+        if (collision.tag == "Player")
+            collision.GetComponent<player_cntrl>().isTreeAtFront = false;
     }
 
     public Vector3 DropWood()

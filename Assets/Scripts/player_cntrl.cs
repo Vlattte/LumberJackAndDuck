@@ -17,7 +17,7 @@ public class player_cntrl : MonoBehaviour
     public float box_distance;
     Vector2 box_size;
     public bool isTreeAtFront;
-    private string tag_name;
+    public string tag_name;
 
     //INVENTORY MANAGMENT
     //public GameObject INVENT_FULL_CAN;
@@ -136,12 +136,12 @@ public class player_cntrl : MonoBehaviour
             Instantiate<GameObject>(duckCall as GameObject, transform.position, Quaternion.identity);
         }
 
-        if (Input.GetKeyUp(KeyCode.F) && tag_name == "duck")
+        if (Input.GetKeyUp(KeyCode.T))
         {
             if (GameObject.FindGameObjectWithTag("duckCaller"))
                 Destroy(GameObject.FindGameObjectWithTag("duckCaller"));
 
-            hit.collider.GetComponent<duck_cntrl>().MoveToStorage();
+            GameObject.FindGameObjectWithTag("duck").GetComponent<duck_cntrl>().MoveToStorage();
         }
         //*****************\\
 
@@ -163,7 +163,7 @@ public class player_cntrl : MonoBehaviour
         player_pos = transform.position;
         player_pos.x += 0.15f * transform.localScale.x;
         
-        hit = Physics2D.BoxCast(player_pos, box_size, 0, Vector2.right * transform.localScale.x, box_distance);
+        hit = Physics2D.BoxCast(player_pos, box_size, 0, Vector2.right * transform.localScale.x, box_distance, colLayer);
 
         if (hit.collider != null)
         {
