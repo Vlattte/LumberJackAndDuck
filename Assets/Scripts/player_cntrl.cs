@@ -17,6 +17,7 @@ public class player_cntrl : MonoBehaviour
     public float box_distance;
     Vector2 box_size;
     public bool isTreeAtFront;
+    private string tag_name;
 
     //INVENTORY MANAGMENT
     //public GameObject INVENT_FULL_CAN;
@@ -76,7 +77,6 @@ public class player_cntrl : MonoBehaviour
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             rb.MovePosition(rb.position + vec * speed);
-            Debug.Log(vec);
         }
     }
 
@@ -107,7 +107,8 @@ public class player_cntrl : MonoBehaviour
 
 
         
-        string tag_name = WhatIsInFrontOfPlayer();
+        tag_name = WhatIsInFrontOfPlayer();
+
 
         //***TREE SECTOR***\\
         //if tree in front, you can cut it
@@ -127,7 +128,20 @@ public class player_cntrl : MonoBehaviour
         //***DUCK SECTOR***\\
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            if (GameObject.FindGameObjectWithTag("duckCaller"))
+            {
+                Destroy(GameObject.FindGameObjectWithTag("duckCaller"));
+            }
+
             Instantiate<GameObject>(duckCall as GameObject, transform.position, Quaternion.identity);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F) && tag_name == "duck")
+        {
+            if (GameObject.FindGameObjectWithTag("duckCaller"))
+                Destroy(GameObject.FindGameObjectWithTag("duckCaller"));
+
+            hit.collider.GetComponent<duck_cntrl>().MoveToStorage();
         }
         //*****************\\
 
@@ -135,6 +149,11 @@ public class player_cntrl : MonoBehaviour
             Rotate();
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "duck")
+            tag_name = "default";
+    }
 
 
     public string WhatIsInFrontOfPlayer()
@@ -144,7 +163,7 @@ public class player_cntrl : MonoBehaviour
         player_pos = transform.position;
         player_pos.x += 0.15f * transform.localScale.x;
         
-        hit = Physics2D.BoxCast(player_pos, box_size, 0, Vector2.right * transform.localScale.x, box_distance, colLayer);
+        hit = Physics2D.BoxCast(player_pos, box_size, 0, Vector2.right * transform.localScale.x, box_distance);
 
         if (hit.collider != null)
         {
@@ -152,6 +171,7 @@ public class player_cntrl : MonoBehaviour
             {
                 isTreeAtFront = true;
             }
+            
             tag_name = hit.collider.tag;
         }
         return tag_name;

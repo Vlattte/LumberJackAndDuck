@@ -40,7 +40,7 @@ public class duck_cntrl : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("duckCaller") && !isWalking)
+        if (GameObject.FindGameObjectWithTag("duckCaller") && !isWalking && !isSendToStorage)
         {
             isWalking = true;
             duckCaller = GameObject.FindGameObjectWithTag("duckCaller");
@@ -49,11 +49,16 @@ public class duck_cntrl : MonoBehaviour
 
 
         player_pos = player.transform.position;
-        /*if (!isSendToStorage)
-            MoveTo(player_pos);
+        
 
         if (isSendToStorage)
-            MoveTo(storage_pos, true);*/
+            MoveTo(storage_pos, true);
+    }
+
+
+    public void MoveToStorage()
+    {
+        isSendToStorage = true;
     }
 
     void OnPathFound(Vector3[] _path, bool isPathSuccess)
@@ -68,6 +73,10 @@ public class duck_cntrl : MonoBehaviour
 
     IEnumerator FollowPath()
     {
+        // if we are in the needed node
+        if (path.Length == 0)
+            yield break;
+
         Vector3 currentWaypoint = path[0];
 
         while(true)
@@ -84,7 +93,6 @@ public class duck_cntrl : MonoBehaviour
                 currentWaypoint = path[way_point_idx];
             }
             MoveTo(currentWaypoint);
-            //transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed);
             yield return null;
         }
     }
@@ -111,10 +119,10 @@ public class duck_cntrl : MonoBehaviour
 
     
 
-    void MoveTo(Vector2 dist_vec, bool isDistStrg = false)
+    bool MoveTo(Vector2 dist_vec, bool isDistStrg = false)
     {
         if (checkIsDistIsNear(isDistStrg))
-            return;
+            return true;
             
         /*float dest_x = (dist_vec[0] - rb.position[0]) / Mathf.Pow(Mathf.Pow(dist_vec[0] - rb.position[0], 2)
                 + Mathf.Pow(dist_vec[1] - rb.position[1], 2), 0.5f);
@@ -124,6 +132,7 @@ public class duck_cntrl : MonoBehaviour
 
         float dist = (rb.position - dist_vec).magnitude;
         transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed);
+        return false;
     }
 
     public void OnDrawGizmos()

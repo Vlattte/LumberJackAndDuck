@@ -28191,6 +28191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperDuck
       objectReference: {fileID: 0}
+    - target: {fileID: 2088632268850219484, guid: 64d5e3405b050064ebd3aa27405e510a, type: 3}
+      propertyPath: m_TagString
+      value: duck
+      objectReference: {fileID: 0}
     - target: {fileID: 4064520334451326948, guid: 64d5e3405b050064ebd3aa27405e510a, type: 3}
       propertyPath: m_RootOrder
       value: 20

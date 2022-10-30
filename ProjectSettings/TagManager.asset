@@ -11,6 +11,7 @@ TagManager:
   - bread_body
   - storage
   - duckCaller
+  - duck
   layers:
   - Default
   - TransparentFX
