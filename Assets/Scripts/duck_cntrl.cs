@@ -20,11 +20,13 @@ public class duck_cntrl : MonoBehaviour
     int way_point_idx;
 
     private GameObject duckCaller;
+    private bool isWalking;
 
     Vector3[] path;
 
     void Start()
     {
+        isWalking = false;
         way_point_idx = 0;
         rb = GetComponent<Rigidbody2D>();
         speed = 0.05f;
@@ -38,9 +40,10 @@ public class duck_cntrl : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("duckCaller"))
+        if (GameObject.FindGameObjectWithTag("duckCaller") && !isWalking)
         {
-            duckCaller = GameObject.FindGameObjectWithTag("duckCaller").GetComponent<GameObject>();
+            isWalking = true;
+            duckCaller = GameObject.FindGameObjectWithTag("duckCaller");
             PathManager.Requestpath(transform.position, duckCaller.transform.position, OnPathFound);
         }
 
@@ -74,6 +77,7 @@ public class duck_cntrl : MonoBehaviour
                 way_point_idx++;
                 if (way_point_idx >= path.Length)
                 {
+                    isWalking = false;
                     Destroy(duckCaller);
                     yield break;
                 }
@@ -116,6 +120,7 @@ public class duck_cntrl : MonoBehaviour
                 + Mathf.Pow(dist_vec[1] - rb.position[1], 2), 0.5f);
         float dest_y = (dist_vec[1] - rb.position[1]) / Mathf.Pow(Mathf.Pow(dist_vec[0] - rb.position[0], 2)
                 + Mathf.Pow(dist_vec[1] - rb.position[1], 2), 0.5f);*/
+
 
         float dist = (rb.position - dist_vec).magnitude;
         transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed);
