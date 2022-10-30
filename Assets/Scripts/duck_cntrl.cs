@@ -16,6 +16,7 @@ public class duck_cntrl : MonoBehaviour
     public float speed;
 
     private bool isSendToStorage;   //true, if player told to go to the base
+    public Vector3 target_pos;
     int way_point_idx;
 
     Vector3[] path;
@@ -24,13 +25,13 @@ public class duck_cntrl : MonoBehaviour
     {
         way_point_idx = 0;
         rb = GetComponent<Rigidbody2D>();
-        speed = 2f;
+        speed = 0.5f;
         DIST_TO_PLAYER = 1.47f;
         DIST_TO_STORAGE = 0.5f;
         storage_pos = storage.transform.position;
         player_pos = player.transform.position;
 
-        PathManager.Requestpath(transform.position, player_pos, OnPathFound);
+        PathManager.Requestpath(transform.position, target_pos, OnPathFound);
 
         isSendToStorage = false;
     }
@@ -61,16 +62,22 @@ public class duck_cntrl : MonoBehaviour
 
         while(true)
         {
-            way_point_idx++;
-            if(way_point_idx >= path.Length)
+            transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed);
+            if (Mathf.Abs((transform.position).magnitude - (currentWaypoint).magnitude) < 0.001)
             {
-                yield break;
-            }
-            currentWaypoint = path[way_point_idx];
-        }
+                way_point_idx++;
+                if (way_point_idx >= path.Length)
+                {
+                    yield break;
+                }
+                currentWaypoint = path[way_point_idx];
 
-        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed);
-        yield return null;
+
+                yield return null;
+            }
+        }
+       
+
     }
 
     bool checkIsDistIsNear(bool isDistStrg)
@@ -107,5 +114,22 @@ public class duck_cntrl : MonoBehaviour
 
         float dist = (rb.position - dist_vec).magnitude;
         transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed * Time.deltaTime);
+    }
+
+    public void OnDrawGizmos()
+    {
+        if(path != null)
+        {
+            for (int i = way_point_idx; i < path.Length; i++)
+            {
+                Gizmos.color = Color.black;
+                Gizmos.DrawCube(path[i], Vector2.one);
+
+                if (i == way_point_idx)
+                    Gizmos.DrawLine(transform.position, path[i]);
+                else
+                    Gizmos.DrawLine(path[i - 1], path[i]);
+            }
+        }
     }
 }
