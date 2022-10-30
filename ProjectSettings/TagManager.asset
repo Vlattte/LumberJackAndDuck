@@ -10,6 +10,7 @@ TagManager:
   - tree
   - bread_body
   - storage
+  - duckCaller
   layers:
   - Default
   - TransparentFX

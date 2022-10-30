@@ -19,25 +19,32 @@ public class duck_cntrl : MonoBehaviour
     public Vector3 target_pos;
     int way_point_idx;
 
+    private GameObject duckCaller;
+
     Vector3[] path;
 
     void Start()
     {
         way_point_idx = 0;
         rb = GetComponent<Rigidbody2D>();
-        speed = 0.5f;
+        speed = 0.05f;
         DIST_TO_PLAYER = 1.47f;
         DIST_TO_STORAGE = 0.5f;
         storage_pos = storage.transform.position;
         player_pos = player.transform.position;
-
-        PathManager.Requestpath(transform.position, target_pos, OnPathFound);
 
         isSendToStorage = false;
     }
 
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("duckCaller"))
+        {
+            duckCaller = GameObject.FindGameObjectWithTag("duckCaller").GetComponent<GameObject>();
+            PathManager.Requestpath(transform.position, duckCaller.transform.position, OnPathFound);
+        }
+
+
         player_pos = player.transform.position;
         /*if (!isSendToStorage)
             MoveTo(player_pos);
@@ -62,22 +69,20 @@ public class duck_cntrl : MonoBehaviour
 
         while(true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed);
-            if (Mathf.Abs((transform.position).magnitude - (currentWaypoint).magnitude) < 0.001)
+            if (transform.position == currentWaypoint)
             {
                 way_point_idx++;
                 if (way_point_idx >= path.Length)
                 {
+                    Destroy(duckCaller);
                     yield break;
                 }
                 currentWaypoint = path[way_point_idx];
-
-
-                yield return null;
             }
+            MoveTo(currentWaypoint);
+            //transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed);
+            yield return null;
         }
-       
-
     }
 
     bool checkIsDistIsNear(bool isDistStrg)
@@ -113,12 +118,12 @@ public class duck_cntrl : MonoBehaviour
                 + Mathf.Pow(dist_vec[1] - rb.position[1], 2), 0.5f);*/
 
         float dist = (rb.position - dist_vec).magnitude;
-        transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, dist_vec, speed);
     }
 
     public void OnDrawGizmos()
     {
-        if(path != null)
+        /*if(path != null)
         {
             for (int i = way_point_idx; i < path.Length; i++)
             {
@@ -130,6 +135,6 @@ public class duck_cntrl : MonoBehaviour
                 else
                     Gizmos.DrawLine(path[i - 1], path[i]);
             }
-        }
+        }*/
     }
 }

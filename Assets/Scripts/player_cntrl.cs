@@ -9,7 +9,7 @@ public class player_cntrl : MonoBehaviour
     public pocket_inventory pocket;
     //private Animator anim;
 
-    //current state of duck
+    //current state of player
     public float speed;
     public bool facingRight = true;
 
@@ -29,6 +29,7 @@ public class player_cntrl : MonoBehaviour
 
     Vector2 player_pos;
 
+    public GameObject duckCall;
 
     void Start()
     {
@@ -123,6 +124,12 @@ public class player_cntrl : MonoBehaviour
         }
         //*************************\\
 
+        //***DUCK SECTOR***\\
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Instantiate<GameObject>(duckCall as GameObject, transform.position, Quaternion.identity);
+        }
+        //*****************\\
 
         if (Input.GetKeyUp(KeyCode.R))
             Rotate();
